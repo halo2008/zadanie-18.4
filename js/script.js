@@ -44,7 +44,7 @@ var Movie = React.createClass({
       React.createElement('li', {className: 'movieItem'},
         React.createElement(MovieTitle, {title: this.props.item.title}),
         React.createElement(MovieDescription, {descr: this.props.item.descr}),
-        React.createElement('img',{src: this.props.item.src})
+        React.createElement(MovieImage, {image: this.props.item.src})
       )
     )
   },
@@ -56,7 +56,7 @@ var MovieTitle = React.createClass({
   },
   render: function(){
     return (
-      React.createElement('h2',{}, this.props.title)
+      React.createElement('h2',{className: 'header'}, this.props.title)
     )
   },
 })
@@ -67,21 +67,21 @@ var MovieDescription = React.createClass({
   },
   render: function(){
     return(
-      React.createElement('p', {}, this.props.descr)
+      React.createElement('p', {className: 'paragraph'}, this.props.descr)
     )
   },
 })
 
-/*var MovieImage = React.createClass({
+var MovieImage = React.createClass({
   propTypes:{
-    image: React.PropTypes.object.isRequired,
+    image: React.PropTypes.string.isRequired,
   },
   render: function(){
     return(
-       React.createElement('img',{src: this.props.image.src},)
+       React.createElement('img',{src: this.props.image},)
     )
   },
-})*/
+})
 
 var App = React.createClass({
   render: function(){
